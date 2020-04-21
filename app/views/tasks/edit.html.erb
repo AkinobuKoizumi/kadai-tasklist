@@ -1,8 +1,8 @@
 <h1>id: 
-<%= @message.id %>
+<%= @task.id %>
  のメッセージ編集ページ</h1>
 
-<%= form_with(model: @message, local: true) do |f| %>
+<%= form_with(model: @task, local: true) do |f| %>
 
   
 <%= f.label :content, 'メッセージ' %>
@@ -17,4 +17,4 @@
 <% end %>
 
 
-<%= link_to '一覧に戻る', messages_path %>
+<%= link_to '一覧に戻る', tasks_path %>
