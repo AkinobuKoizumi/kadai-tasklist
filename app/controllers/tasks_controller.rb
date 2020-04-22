@@ -3,7 +3,7 @@ class TasksController < ApplicationController
  
  
     def index
-      @tasks = Task.all
+      @tasks = Task.order(id: :desc ).page(params[:page]).per(3)
     end
     def show
     end
@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     def create
      @task = Task.new(task_params)
 
-     if @task.save
+     if @task.save 
       flash[:success] = 'Task が正常に投稿されました'
       redirect_to @task
      else
